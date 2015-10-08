@@ -4,6 +4,7 @@ var feed = require("feed-read");
 var request = require('request');
 
 /* GET home page. */
+
 router.get('/news', function(req, res, next) {
   feed("http://craphound.com/?feed=rss2", function(err, articles) {
   	if (err)
@@ -46,6 +47,10 @@ router.get('/search',function(req,res,next){
   			}
   		});
 	}
+});
+
+router.get('/*',function(req,res,next){
+  res.status(200).end();
 });
 
 module.exports = router;
