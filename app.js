@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var http = require('http');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -29,7 +28,6 @@ var allowCrossDomain = function(req, res, next) {
 }
 app.use(allowCrossDomain);
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

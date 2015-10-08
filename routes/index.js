@@ -24,8 +24,8 @@ router.get('/news', function(req, res, next) {
   });
 });
 
-router.post('/search',function(req,res,next){
-	var searchUrl = req.body.searchUrl;
+router.get('/search',function(req,res,next){
+	var searchUrl = req.query.searchUrl;
 	if(searchUrl)
 	{
 		feed(searchUrl, function(err, articles) {
