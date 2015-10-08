@@ -28,7 +28,7 @@ router.post('/search',function(req,res,next){
 	var searchUrl = req.body.searchUrl;
 	if(searchUrl)
 	{
-		feed("http://craphound.com/?feed=rss2", function(err, articles) {
+		feed(searchUrl, function(err, articles) {
   			if (err)
   			{
   				res.status(400).end();
